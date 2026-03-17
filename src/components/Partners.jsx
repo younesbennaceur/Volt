@@ -141,16 +141,18 @@ const PartnerSection = () => {
               <ChevronRight size={18} className="group-hover:translate-x-1 transition-transform" />
             </button>
 
-            {/* Logo Stripe & Réassurance */}
+            {/* Logo Stripe & Réassurance (Modifié ici) */}
             <div className="flex items-center gap-3">
               <div className="text-xs font-bold text-gray-400 uppercase tracking-wide text-right leading-tight">
                 Paiements<br/>sécurisés
               </div>
               <div className="h-8 border-l border-gray-200"></div>
-              {/* Logo Stripe vectoriel (SVG propre) */}
-              <svg viewBox="0 0 60 25" className="h-6 text-[#635BFF] fill-current" xmlns="http://www.w3.org/2000/svg">
-                <path d="M59.64 14.28h-8.06c.19 1.93 1.6 3.06 3.58 3.06 1.64 0 2.87-.64 3.65-1.54l2.58 2.51c-1.39 1.64-3.52 2.39-6.31 2.39-4.85 0-8.23-3.26-8.23-8.23 0-5.06 3.25-8.27 7.9-8.27 4.75 0 7.55 3.39 7.55 8.16-.01.66-.08 1.34-.26 1.92zm-8.28-2.61h4.63c-.15-1.55-1.25-2.73-3.08-2.73-1.63 0-3.05 1.05-3.41 2.73h1.86zM40.23 4.41L40.23 20.45 35.81 20.45 35.81 4.41 40.23 4.41zM11.69 11.23c0-1.44-1.2-2.3-2.92-2.3-1.84 0-3.25 1.01-3.25 2.59 0 3.73 7.85 2.92 7.85 7.15 0 2.4-2.18 3.99-5.18 3.99-2.52 0-4.83-1.07-5.91-2.48l2.25-3.04c1.07 1.13 2.71 1.96 4.09 1.96 1.25 0 2.11-.64 2.11-1.64 0-3.79-7.85-2.81-7.85-7.1 0-2.32 1.99-3.9 4.88-3.9 2.21 0 4.19.86 5.48 2.05L11.69 11.23zM25.75 8.01c-1.28 0-2.36.46-3.01 1.25V4.41h-4.42v16.04h4.42v-1.63c.66.78 1.76 1.27 3.06 1.27 3.22 0 5.61-2.54 5.61-6.04s-2.35-6.04-5.66-6.04zm-1.12 8.76c-1.52 0-2.71-1.22-2.71-2.71 0-1.52 1.2-2.73 2.71-2.73 1.54 0 2.73 1.2 2.73 2.73s-1.18 2.71-2.73 2.71zM34.78 8.41V4.41h-4.42v16.04h4.42v-6.49c0-1.93 1.05-3.26 2.87-3.26.15 0 .33.02.5.06V6.36c-.22-.04-.44-.06-.68-.06-1.27 0-2.28.62-2.69 2.11z M51.05 8.01c-1.28 0-2.36.46-3.01 1.25V8.27h-4.42v16.48h4.42v-5.26c.66.78 1.76 1.27 3.06 1.27 3.22 0 5.61-2.54 5.61-6.04s-2.35-6.04-5.66-6.04zm-1.12 8.76c-1.52 0-2.71-1.22-2.71-2.71 0-1.52 1.2-2.73 2.71-2.73 1.54 0 2.73 1.2 2.73 2.73s-1.18 2.71-2.73 2.71z"/>
-              </svg>
+              {/* Image Stripe importée via URL */}
+              <img 
+                src="https://upload.wikimedia.org/wikipedia/commons/b/ba/Stripe_Logo%2C_revised_2016.svg" 
+                alt="Logo Stripe" 
+                className="h-6 object-contain"
+              />
             </div>
           </motion.div>
 

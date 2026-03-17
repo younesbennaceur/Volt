@@ -11,6 +11,7 @@ import FAQ from '../components/Faqs.jsx';
 import PartnerSection from '../components/Partners.jsx';
 import CTASection from '../components/Cta.jsx';
 import Features from '../components/Features.jsx';
+import Services from '../components/Services.jsx';
 
 export default function Home() {
   return (
@@ -19,6 +20,7 @@ export default function Home() {
       <Hero />
       <HowItWorks />
         <Features />
+        <Services />
      
       <AppGallery />
       

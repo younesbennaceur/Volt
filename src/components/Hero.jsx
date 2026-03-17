@@ -33,9 +33,11 @@ const Hero = () => {
 
       <div className="flex-grow max-w-[1400px] mx-auto w-full flex flex-col lg:flex-row items-center justify-between px-6 pt-28 pb-10 md:px-12 lg:px-20 relative z-10">
         
-        {/* COLONNE GAUCHE (Texte) */}
+        {/* ========================================= */}
+        {/* COLONNE GAUCHE (Textes et Boutons)        */}
+        {/* ========================================= */}
         <motion.div 
-          className="w-full lg:w-1/2 flex flex-col items-start gap-y-3 lg:gap-y-4 z-20 mt-4 lg:mt-0"
+          className="w-full lg:w-[45%] flex flex-col items-start gap-y-3 lg:gap-y-4 z-20 mt-4 lg:mt-0"
           variants={containerVariants}
           initial="hidden"
           animate="visible"
@@ -45,7 +47,6 @@ const Hero = () => {
             <span className="text-sm md:text-base font-medium text-slate-200">+2 000 dépanneurs actifs en France</span>
           </motion.div>
 
-          {/* TITRE MODIFIÉ ICI */}
           <motion.h1 variants={itemVariants} className="text-5xl md:text-6xl lg:text-[3.5rem] xl:text-[4.5rem] font-extrabold leading-[1.1] tracking-tight">
             <span className="inline-block bg-white text-[#020617] px-5 py-2 transform -rotate-2 mb-3">
               Commandez
@@ -56,10 +57,21 @@ const Hero = () => {
 
           <motion.p variants={itemVariants} className="text-base md:text-lg lg:text-xl text-slate-300 max-w-lg leading-relaxed">
             Comparez les offres en temps réel, choisissez votre pro, et repartez serein. <br className="hidden md:block"/>
-          
           </motion.p>
+          
+          <motion.div variants={itemVariants} className="flex flex-wrap gap-3 ">
+            <span className="flex items-center gap-1.5 px-3 py-1.5 bg-white/5 border border-white/10 rounded-full text-sm font-medium text-slate-300">
+              🛞 Dépannage Pneu
+            </span>
+            <span className="flex items-center gap-1.5 px-3 py-1.5 bg-white/5 border border-white/10 rounded-full text-sm font-medium text-slate-300">
+              🔋 Batterie
+            </span>
+            <span className="flex items-center gap-1.5 px-3 py-1.5 bg-white/5 border border-white/10 rounded-full text-sm font-medium text-slate-300">
+              🚗 Remorquage
+            </span>
+          </motion.div>
 
-          <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
+          <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto mt-2">
             <button className="flex items-center justify-center gap-3 bg-white text-black px-6 md:px-8 py-3 rounded-2xl hover:bg-slate-100 transition-all shadow-xl hover:scale-105">
               <Play size={24} className="text-black" />
               <div className="text-left">
@@ -78,51 +90,81 @@ const Hero = () => {
           </motion.div>
         </motion.div>
 
-        {/* COLONNE DROITE (Images alignées sur le design Figma) */}
+
+        {/* ========================================= */}
+        {/* COLONNE DROITE (2 iPHONES CÔTE À CÔTE)      */}
+        {/* ========================================= */}
         <motion.div 
-          className="w-full lg:w-1/2 relative mt-20 lg:mt-0 flex justify-center lg:justify-end items-center lg:pr-10"
+          className="w-full lg:w-[55%] relative mt-20 lg:mt-0 flex justify-center lg:justify-end items-center"
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1, delay: 0.4 }}
         >
-           <motion.img 
-              animate={floatAnimation(1)} 
-              src="/rating.png" 
-              alt="Widget Rating" 
-              className="absolute z-30 md:-bottom-[35%] left-3/4 transform -translate-x-1/2 w-[160%] md:w-[170%] h-auto drop-shadow-2xl rounded-2xl" 
-            />
-              {/* 2. Le Devis : À Gauche */}
-            <motion.img 
-              animate={floatAnimation(0.5)} 
-              src="/devis.png" 
-              alt="Widget Devis" 
-              className="absolute z-20 top-[15%] -left-[60%] md:left-1/4 w-[10%] md:w-[45%] h-auto drop-shadow-2xl rounded-xl" 
-            />
-          {/* L'iPhone central */}
-          <div className="relative w-[200px] md:w-[240px] lg:w-[240px]">
+          {/* Le conteneur est plus large pour accueillir les deux téléphones (jusqu'à 480px sur PC) */}
+          <div className="relative w-[300px] md:w-[420px] lg:w-[480px]">
             
             {/* RECTANGLE BLANC DE FOND */}
             <motion.div 
               initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: '60%' }} 
+              animate={{ opacity: 1, height: '55%' }} 
               transition={{ duration: 0.8, delay: 0.6 }}
-              className="absolute bottom-[15%] -right-[15%] w-[130%] bg-white rounded-[2.5rem] z-0 shadow-2xl"
+              // Il englobe les deux téléphones en largeur
+              className="absolute bottom-[18%] -left-[5%] w-[110%] bg-white rounded-[3rem] z-0 shadow-2xl"
             ></motion.div>
 
-            {/* 1. L'iPhone central */}
+            {/* LES DEUX TÉLÉPHONES EN FLEX (Côte à côte) */}
+            <div className="flex gap-4 md:gap-6 w-full relative z-10">
+              
+              {/* iPhone 1 (Gauche) */}
+              <motion.div 
+                animate={floatAnimation(0)} 
+                className="w-1/2 relative z-20"
+              >
+                <img 
+                  src="/iphone.png" 
+                  alt="App Client" 
+                  className="w-full h-auto drop-shadow-[0_15px_30px_rgba(0,0,0,0.5)]" 
+                />
+              </motion.div>
+
+              {/* iPhone 2 (Droite - Légèrement décalé vers le bas avec mt-10) */}
+              <motion.div 
+                animate={floatAnimation(0.4)} 
+                className="w-1/2 relative z-10 mt-8 md:mt-12"
+              >
+                <img 
+                  src="/pneu.png" // Assure-toi d'avoir une image iphone2.png
+                  alt="App Pro" 
+                  className="w-full h-auto drop-shadow-[0_15px_30px_rgba(0,0,0,0.4)]" 
+                />
+              </motion.div>
+
+            </div>
+
+            {/* WIDGETS (Placés par-dessus le groupe) */}
+            
+            {/* Le Devis : À Gauche du groupe */}
             <motion.img 
-              animate={floatAnimation(0)} 
-              src="/iphone.png" 
-              alt="App iPhone" 
-              className="relative z-10 w-full h-auto drop-shadow-[0_10px_30px_rgba(0,0,0,0.3)]" 
+              animate={floatAnimation(0.5)} 
+              src="/devis.png" 
+              alt="Widget Devis" 
+              // w-[45%] par rapport au grand conteneur
+              className="absolute z-30 top-[12%] -left-[15%] md:-left-[20%] w-[45%] md:w-[50%] h-auto drop-shadow-2xl rounded-xl" 
             />
 
-          
+            {/* Le Rating : TRÈS GRAND ET BIEN CENTRÉ EN BAS DU GROUPE */}
+            <motion.img 
+              animate={floatAnimation(1)} 
+              src="/rating.png" 
+              alt="Widget Rating" 
+              // w-[110%] couvre toute la largeur des deux téléphones réunis !
+              className="absolute z-40 -bottom-[12%] left-1/2 transform -translate-x-1/2 w-[110%] md:w-[110%] h-auto drop-shadow-2xl rounded-2xl" 
+            />
 
           </div>
           
-          {/* Lueur d'arrière-plan */}
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[350px] h-[350px] bg-blue-500/10 rounded-full blur-[120px] z-0 pointer-events-none"></div>
+          {/* Lueur d'arrière-plan bleue */}
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-blue-500/10 rounded-full blur-[120px] z-0 pointer-events-none"></div>
         </motion.div>
 
       </div>
